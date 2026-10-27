@@ -3,4 +3,4 @@ Allow: /
 Disallow: /scripts/
 Disallow: /tests/
 
-Sitemap: https://music.luminoid.dev/sitemap.xml
+Sitemap: https://genre.luminoid.dev/sitemap.xml

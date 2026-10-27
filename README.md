@@ -3,10 +3,10 @@
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#run-it)
 
-Genryu (源流, the source and course of a tradition) is a family tree of popular music, live at `https://music.luminoid.dev`. Ninety-one genres from the blues of the 1900s to the internet genres of the 2020s, placed by year and family, each with its origin, the genres it grew out of and led to, its key artists and records, and a short original sketch of its sound that the browser synthesizes and plays part by part. English and Simplified Chinese. Vanilla JavaScript, SVG and Web Audio, no build step, no dependencies: a folder of static files on any host.
+Genryu (源流, the source and course of a tradition) is a family tree of popular music, live at `https://genre.luminoid.dev`. Ninety-one genres from the blues of the 1900s to the internet genres of the 2020s, placed by year and family, each with its origin, the genres it grew out of and led to, its key artists and records, and a short original sketch of its sound that the browser synthesizes and plays part by part. English and Simplified Chinese. Vanilla JavaScript, SVG and Web Audio, no build step, no dependencies: a folder of static files on any host.
 
 <p align="center">
-  <a href="https://music.luminoid.dev"><img src=".github/social-preview.png" alt="Genryu: a family tree of popular music genres" width="720"></a>
+  <a href="https://genre.luminoid.dev"><img src=".github/social-preview.png" alt="Genryu: a family tree of popular music genres" width="720"></a>
 </p>
 
 ## What is on the page
