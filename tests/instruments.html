@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Genryu instrument check</title>
+</head>
+<body>
+  <p>Renders every instrument alone (a short phrase in its usual register) and every drum sound of every kit, for listening and spectral analysis outside the browser. Driven by <code>scripts/render-check.mjs --instruments</code>; results land in <code>window.__results</code>, the renders as WAV files in <code>window.__wavs</code>.</p>
+  <ul id="out"></ul>
+  <script type="module" src="instruments.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+// Punk: punk, new wave, post-punk, hardcore, goth, pop punk, emo.
+// Four bars each: the figure in bars 1-2, a chord change, fill or breakdown in bars 3-4.
+const VOICE = { en: 'Voice', zh: '人声' };
+const CRASH = { en: 'Crash', zh: '吊镲' };
+const BARITONE = { en: 'Baritone', zh: '男中音' };
+
+export const PUNK_PIECES = {
+  punk: {
+    bpm: 178,
+    bars: 4,
+    kit: 'rock',
+    master: { reverb: 'room', send: 0.1, humanize: 0.008 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x...x...x...x... x...x...x...x... x...x...x...x... x...x...x...x.x.' },
+      { id: 'snare', inst: 'snare', steps: '....X.......X... ....X.......X... ....X.......X... ....X.......X.XX' },
+      { id: 'hat', inst: 'hat', steps: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.o.' },
+      { id: 'bass', inst: 'bassPick', notes: 'E2 . E2 . E2 . E2 . E2 . E2 . E2 . E2 . | E2 . E2 . E2 . E2 . E2 . E2 . E2 . E2 . | A2 . A2 . A2 . A2 . A2 . A2 . A2 . A2 . | B2 . B2 . B2 . B2 . B2 . B2 . A2 . A2 .', gate: 0.6, fx: { drive: 0.15 } },
+      { id: 'guitar', inst: 'guitarDist', role: 'guitar', name: { en: 'Downstrokes', zh: '下拨' }, prog: 'E5 E5 A5 B5', rhythm: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x.', octave: 2, voicing: 'power', gate: 0.6, level: 0.9, fx: { drive: 0.2 } },
+      { id: 'lead', inst: 'voiceShout', name: { en: 'Sneer', zh: '嘲讽唱腔' }, notes: 'E4 _ E4 _ E4 _ D4 _ B3 _ _ _ . . . . | E4 _ E4 _ D4 _ B3 _ A3 _ _ _ . . . . | A3 _ C4 _ A3 _ C4 _ D4 _ _ _ . . . . | B3 _ D4 _ B3 _ D4 _ E4 _ _ _ _ _ _ _', gate: 0.7, fx: { drive: 0.5 } },
+    ],
+  },
+  'new-wave': {
+    bpm: 138,
+    bars: 4,
+    kit: 'linn',
+    master: { reverb: 'room', send: 0.12, humanize: 0.004 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x...x...x...x... x...x...x..x..x. x...x...x...x... x...x...x..x..x.', level: 0.65 },
+      { id: 'snare', inst: 'snare', steps: '....X.......X... ....X.......X... ....X.......X... ....X.......X.X.' },
+      { id: 'hat', inst: 'hat', steps: 'xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxo', level: 0.6 },
+      { id: 'bass', inst: 'bassPick', notes: 'E2 . . E2 . . E2 . . . E2 . . G2 . . | G2 . . G2 . . G2 . . . G2 . . B2 . . | C2 . . C3 . . C2 . . . C3 . . C2 . . | D2 . . D3 . . D2 . . . D3 . . D2 D2 .', gate: 0.5 },
+      { id: 'guitar', inst: 'guitarClean', role: 'guitar', name: { en: 'Scratch guitar', zh: '切音吉他' }, prog: 'Em G C D', rhythm: '..x...x...x...x. ..x...x...x...x. ..xx..x...xx..x. ..xx..x...xx..x.', octave: 4, voicing: 'top', gate: 0.4, level: 1.2 },
+      { id: 'synth', inst: 'leadSquare', role: 'keys', name: { en: 'Cheap synth', zh: '廉价合成器' }, notes: 'B4 _ . . B4 _ . . B4 _ . . D5 _ . . | B4 _ . . B4 _ . . G4 _ . . B4 _ . . | E5 _ . . E5 _ . . G5 _ E5 _ D5 _ . . | D5 _ . . F#5 _ . . A5 _ _ _ G5 _ F#5 _', gate: 0.5, level: 1 },
+      { id: 'lead', inst: 'voice', name: { en: 'Yelp', zh: '怪叫唱腔' }, notes: '. . . . E4 _ G4 _ E4 _ _ _ . . . . | D4 _ E4 _ G4 _ _ _ A4 _ G4 _ E4 _ _ _ | . . . . G4 _ A4 _ G4 _ _ _ E4 _ _ _ | D4 _ F#4 _ A4 _ _ _ . . . . . . . .', gate: 0.7, fx: { drive: 0.2 } },
+    ],
+  },
+  'post-punk': {
+    bpm: 132,
+    bars: 4,
+    kit: 'acoustic',
+    master: { reverb: 'plate', send: 0.3, humanize: 0.004 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x...x...x...x... x...x...x...x... x...x...x.x.x... x...x...x.x.x...', level: 0.55 },
+      { id: 'snare', inst: 'snare', steps: '....X.......X... ....X.......X... ....X.......X... ....X.......X..X', fx: { reverb: 0.5 } },
+      { id: 'hat', inst: 'hat', steps: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x.', level: 0.7 },
+      { id: 'tom', inst: 'tom', role: 'perc', name: { en: 'Toms', zh: '通鼓' }, steps: '................ ................ ........x...x... ....x...x.x.x.x.', level: 0.7, fx: { reverb: 0.4 } },
+      { id: 'bass', inst: 'bassPick', name: { en: 'Lead bass', zh: '主奏贝斯' }, notes: 'A2 . A2 . C3 . A2 . E3 . A2 . D3 . C3 . | A2 . A2 . C3 . A2 . G2 . A2 . B2 . C3 . | F2 . F2 . A2 . F2 . C3 . F2 . E3 . D3 . | G2 . G2 . B2 . G2 . D3 . G2 . E3 . G2 .', gate: 0.7, fx: { chorus: 0.4 } },
+      { id: 'guitar', inst: 'guitarClean', role: 'guitar', name: { en: 'Thin guitar', zh: '单薄的吉他' }, notes: '. . E5 . . . E5 . . . G5 . . . E5 . | . . E5 . . . E5 . . . A5 . . . G5 . | A5 _ _ _ C6 _ _ _ A5 _ _ _ G5 _ _ _ | B5 _ _ _ D6 _ _ _ B5 _ _ _ G5 _ _ _', gate: 0.6, level: 1.2, fx: { reverb: 0.4, highpass: 600 } },
+      { id: 'synth', inst: 'pad', role: 'pad', name: { en: 'Synth drone', zh: '合成器持续音' }, notes: 'A3 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _', gate: 1, level: 0.6 },
+      { id: 'lead', inst: 'voice', name: BARITONE, notes: 'A3 _ _ _ C4 _ A3 _ _ _ _ _ E3 _ _ _ | A3 _ _ _ G3 _ A3 _ _ _ _ _ _ _ _ _ | C4 _ _ _ A3 _ F3 _ _ _ _ _ _ _ _ _ | G3 _ _ _ B3 _ G3 _ E3 _ _ _ _ _ _ _', gate: 0.95, level: 1.2, transpose: -5 },
+    ],
+  },
+  hardcore: {
+    bpm: 208,
+    bars: 4,
+    kit: 'rock',
+    master: { reverb: 'room', send: 0.08, humanize: 0.01 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.......x....... x.......x.....x.', level: 0.8 },
+      { id: 'snare', inst: 'snare', steps: '.x.x.x.x.x.x.x.x .x.x.x.x.x.x.x.x ........X....... ........X...x.xx', level: 0.6 },
+      { id: 'hat', inst: 'hat', steps: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. o.o.o.o.o.o.o.o. o.o.o.o.o.o.o.o.', level: 0.6 },
+      { id: 'crash', inst: 'crash', role: 'perc', name: CRASH, steps: '................ ................ x............... x.......x.......', level: 0.6 },
+      { id: 'bass', inst: 'bassPick', notes: 'E2 . E2 . E2 . E2 . G2 . G2 . A2 . A2 . | E2 . E2 . E2 . E2 . A2 . A2 . B2 . B2 . | E2 _ _ _ . . E2 . E2 _ _ _ . . G2 . | E2 _ _ _ . . E2 . G2 _ _ _ A2 _ B2 _', gate: 0.5, fx: { drive: 0.2 } },
+      { id: 'guitar', inst: 'guitarDist', role: 'guitar', name: { en: 'Buzzsaw guitar', zh: '电锯吉他' }, chords: 'E5 . E5 . E5 . E5 . G5 . G5 . A5 . A5 . | E5 . E5 . E5 . E5 . A5 . A5 . B5 . B5 . | E5 _ _ _ . . E5 . E5 _ _ _ . . G5 . | E5 _ _ _ . . E5 . G5 _ _ _ A5 _ B5 _', octave: 2, voicing: 'power', gate: 0.6, level: 0.9, fx: { drive: 0.3 } },
+      { id: 'lead', inst: 'voiceShout', name: { en: 'Bark', zh: '吼叫' }, notes: 'E4 . E4 . E4 . E4 . E4 . . . . . . . | E4 . E4 . E4 . D4 . B3 . . . . . . . | E4 _ _ _ . . . . E4 _ _ _ . . . . | E4 _ _ _ . . . . G4 _ _ _ E4 _ _ _', gate: 0.5, fx: { drive: 0.6 } },
+    ],
+  },
+  goth: {
+    bpm: 108,
+    bars: 4,
+    kit: 'acoustic',
+    master: { reverb: 'cave', send: 0.35, humanize: 0.006 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x.......x....... x.......x....... x.......x....... x.......x...x...', level: 0.9 },
+      { id: 'tom', inst: 'tom', role: 'perc', name: { en: 'Tribal toms', zh: '部落式通鼓' }, steps: 'x..x..x.x..x..x. x..x..x.x..x..x. x..x..x.x..x..x. x..x..x.x.x.xxxx', level: 0.65 },
+      { id: 'tomHigh', inst: 'tomHigh', role: 'perc', name: { en: 'High tom', zh: '高音通鼓' }, steps: '................ ................ .x....x..x....x. .x....x..x.x.x.x', level: 0.6 },
+      { id: 'snare', inst: 'snare', steps: '....x.......x... ....x.......x... ....x.......x... ....x.......x.x.', fx: { reverb: 0.6 } },
+      { id: 'bass', inst: 'bassPick', notes: 'D2 . D2 . F2 . D2 . A2 . D2 . C3 . A2 . | D2 . D2 . F2 . D2 . Bb2 . A2 . G2 . F2 . | Bb2 . Bb2 . D3 . Bb2 . F3 . Bb2 . D3 . C3 . | A2 . A2 . C3 . A2 . E3 . A2 . G2 . A2 .', gate: 0.7, fx: { chorus: 0.6 } },
+      { id: 'guitar', inst: 'guitarClean', role: 'guitar', name: { en: 'Flickering guitar', zh: '闪烁的吉他' }, notes: 'D5 . . A5 . . F5 . . D5 . . A5 . . F5 | . . D5 . . Bb5 . . A5 . . G5 . . F5 . | Bb4 . . F5 . . D5 . . Bb4 . . F5 . . D5 | A4 . . E5 . . C5 . . A4 . . E5 . . G5', gate: 0.8, level: 1.2, fx: { reverb: 0.6, chorus: 0.4, highpass: 500 } },
+      { id: 'organ', inst: 'organ', role: 'pad', name: { en: 'Drone', zh: '持续音' }, notes: 'D3 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | Bb2 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | A2 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _', gate: 1, level: 0.8, fx: { reverb: 0.4 } },
+      { id: 'lead', inst: 'voice', name: BARITONE, notes: 'D4 _ _ _ F4 _ D4 _ C4 _ _ _ _ _ _ _ | A3 _ _ _ Bb3 _ A3 _ G3 _ _ _ F3 _ _ _ | F4 _ _ _ D4 _ _ _ Bb3 _ _ _ _ _ _ _ | A3 _ _ _ C4 _ _ _ E4 _ _ _ _ _ _ _', gate: 0.95, level: 1.2, transpose: -5, fx: { reverb: 0.4 } },
+    ],
+  },
+  'pop-punk': {
+    bpm: 172,
+    bars: 4,
+    kit: 'rock',
+    master: { reverb: 'room', send: 0.1, humanize: 0.005 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x...x...x...x... x...x...x...x... x...x...x...x... x...x...x...x.x.' },
+      { id: 'snare', inst: 'snare', steps: '....X.......X... ....X.......X.x. ....X.......X... ....X.......XxXx' },
+      { id: 'crash', inst: 'crash', role: 'perc', name: CRASH, steps: 'x............... ................ x............... ................', level: 0.7 },
+      { id: 'hat', inst: 'hat', steps: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x.', level: 1 },
+      { id: 'bass', inst: 'bassPick', notes: 'C2 . C2 . C2 . C2 . C2 . C2 . C2 . C2 . | G2 . G2 . G2 . G2 . G2 . G2 . G2 . G2 . | A2 . A2 . A2 . A2 . A2 . A2 . A2 . A2 . | F2 . F2 . F2 . F2 . F2 . F2 . G2 . G2 .', gate: 0.6 },
+      { id: 'guitar', inst: 'guitarDist', role: 'guitar', name: { en: 'Power chords', zh: '强力和弦' }, prog: 'C5 G5 A5 F5', rhythm: 'x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.x. x.x.x.x.x.x.x.xx', octave: 3, voicing: 'power', gate: 0.6, level: 0.8, fx: { drive: 0.2 } },
+      { id: 'octaves', inst: 'guitarLead', role: 'guitar', name: { en: 'Octave lead', zh: '八度主音' }, notes: '. . . . . . . . . . . . . . . . | . . . . . . . . . . . . . . . . | E5 _ _ _ _ _ _ _ C5 _ _ _ _ _ _ _ | A4 _ _ _ _ _ _ _ G4 _ _ _ _ _ _ _', gate: 0.9, level: 0.6 },
+      { id: 'lead', inst: 'voice', name: VOICE, notes: 'E4 _ G4 _ G4 _ E4 _ D4 _ _ _ . . . . | D4 _ E4 _ D4 _ B3 _ G3 _ _ _ . . . . | E4 _ G4 _ A4 _ G4 _ E4 _ _ _ . . . . | F4 _ A4 _ G4 _ F4 _ E4 _ D4 _ C4 _ _ _', gate: 0.9, level: 1.2 },
+    ],
+  },
+  emo: {
+    bpm: 160,
+    bars: 4,
+    stepsPerBar: 14,
+    beatSteps: 2,
+    kit: 'acoustic',
+    master: { reverb: 'room', send: 0.25, humanize: 0.012 },
+    tracks: [
+      { id: 'kick', inst: 'kick', steps: 'x.....x....... x.....x....... x..x..x...x.x. x..x..x...x.x.', level: 0.55 },
+      { id: 'rim', inst: 'rim', role: 'snare', name: { en: 'Rim click', zh: '边击' }, steps: '......x....... ......x....... .............. ..............', level: 1 },
+      { id: 'snare', inst: 'snare', steps: '.............. .............. ......x...x... ......x...x.xx', level: 1 },
+      { id: 'hat', inst: 'ride', name: { en: 'Ride', zh: '叠音镲' }, steps: 'x.x.x.x.x.x.x. x.x.x.x.x.x.x. x.x.x.x.x.x.x. x.x.x.x.x.x.x.', level: 0.5 },
+      { id: 'bass', inst: 'bassFinger', notes: 'C3 . . . . . G2 . . . E3 . . . | G2 . . . . . D3 . . . B2 . . . | A2 . . . . . E3 . . . C3 . . . | F2 . . . . . C3 . . . G2 . A2 .', gate: 1 },
+      { id: 'guitar', inst: 'guitarClean', role: 'guitar', name: { en: 'Twinkle guitar', zh: '闪烁的清音吉他' }, notes: 'C4 E4 G4 D5 G4 E4 C4 E4 G4 D5 E5 D5 G4 E4 | B3 D4 G4 A4 G4 D4 B3 D4 G4 A4 B4 A4 G4 D4 | A3 C4 E4 B4 E4 C4 A3 C4 E4 B4 C5 B4 E4 C4 | A3 C4 F4 E4 F4 C4 A3 C4 F4 E4 G4 E4 F4 C4', gate: 1.3, level: 1.1, fx: { delay: { time: '8', feedback: 0.2, mix: 0.2 } } },
+      { id: 'second', inst: 'guitarClean', role: 'guitar', name: { en: 'Second guitar', zh: '第二把吉他' }, notes: '. . . . . . . . . . . . . . | . . . . . . . . . . . . . . | E5 _ _ _ _ _ C5 _ _ _ B4 _ _ _ | C5 _ _ _ _ _ A4 _ _ _ G4 _ _ _', gate: 1.2, level: 1.1, fx: { reverb: 0.4, pan: 0.3 } },
+      { id: 'lead', inst: 'voice', name: VOICE, notes: '. . . . . . . G4 _ _ E4 _ _ _ | A4 _ _ C5 _ _ A4 _ _ G4 _ _ _ _ | C5 _ _ _ _ _ B4 _ _ _ A4 _ _ _ | G4 _ _ A4 _ _ G4 _ _ E4 _ _ _ _', gate: 0.95 },
+    ],
+  },
+};

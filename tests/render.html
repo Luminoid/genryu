@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Genryu render check</title>
+</head>
+<body>
+  <p>Renders every sketch offline and measures it; results land in <code>window.__results</code> and in the list below. Driven by <code>scripts/render-check.mjs</code>. With <code>?wav=mix</code> or <code>?wav=tracks</code> the renders are also kept as WAV files in <code>window.__wavs</code>.</p>
+  <ul id="out"></ul>
+  <script type="module" src="render.mjs"></script>
+</body>
+</html>
